@@ -17,15 +17,9 @@ public class Application {
 
     @Bean
     CommandLineRunner lookup(final SpringSoapWSClient springSoapWSClient) {
-        return args -> {
-            String word = "MSFT";
-
-            if (args.length > 0) {
-                word = args[0];
-            }
-
-            HelloWSResponce helloWSResponce = springSoapWSClient.getHelloWSResponceSpring(word);
-            System.err.println(helloWSResponce.getWord());
+        String word = "MSFT";
+        HelloWSResponce helloWSResponce = springSoapWSClient.getHelloWSResponceSpring(word);
+        System.err.println(helloWSResponce.getWord());
         };
     }
 }
